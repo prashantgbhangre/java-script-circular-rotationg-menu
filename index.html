@@ -1,0 +1,121 @@
+<html>
+<head>
+</head>
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<script src="js/jquery-1.6.4.js"></script>
+<script type="text/javascript" src="js/jquery.path.js"></script>
+<script type="text/javascript" src="js/circle_3.js"></script>    
+<body>
+    <div class="main_container">
+        <div class="right_container">
+            <div class="right_sub_container" id="right_container_distrubutor">
+            
+            <div class="wrapper">
+                <div id="image_circle_1" class="images" style="display:block;">
+                    <ul><li> Menu 1 Detail</li><li>Menu 1 Detail</li><li>Menu 1 Detail</li><li>Menu 1 Detail</li><li>Menu 1 Detail</li></ul>
+                </div>
+                <div id="image_circle_2" class="images">
+                    <ul><li> Menu 2 Detail</li><li>Menu 2 Detail</li><li>Menu 2 Detail</li><li>Menu 2 Detail</li><li>Menu 2 Detail</li></ul>
+                </div>
+                <div id="image_circle_3" class="images">
+                    <ul><li> Menu 3 Detail</li><li>Menu 3 Detail</li><li>Menu 3 Detail</li><li>Menu 3 Detail</li><li>Menu 3 Detail</li></ul>
+                </div>
+                <div id="image_circle_4" class="images">
+                    <ul><li> Menu 4 Detail</li><li>Menu 4 Detail</li><li>Menu 4 Detail</li><li>Menu 4 Detail</li><li>Menu 4 Detail</li></ul>
+                </div>
+                <div id="image_circle_5" class="images">
+                    <ul><li> Menu 5 Detail</li><li>Menu 5 Detail</li><li>Menu 5 Detail</li><li>Menu 5 Detail</li><li>Menu 5 Detail</li></ul>
+                </div>
+            </div>
+            
+                <div class="right_container_main_circle_1" id="outer">
+                    <img class="right_moving_circle_1" src="images/0.png"/>
+                    <img class="right_moving_circle_2" src="images/1.png"/>
+                    <img class="right_moving_circle_1" src="images/2.png"/>                    
+                </div>
+                
+                <div class="right_container_main_circle_2">
+                    <button class="button circle" id="circle_1">Menu 1</button>
+                    <button class="button circle" id="circle_2">Menu 2</button>
+                    <button class="button circle" id="circle_3">Menu 3</button>
+                    <button class="button circle" id="circle_4">Menu 4</button>
+                    <button class="button circle" id="circle_5">Menu 5</button>
+                    
+                </div>
+                
+            </div>      
+            <div class="right_sub_container" id="right_container_product">
+                    right_container_product
+            </div>      
+            <div class="right_sub_container" id="right_container_journey">
+                    right_container_journey
+            </div>              
+        </div>        
+    </div>
+</body>
+</html>
+<script>
+$(document).ready(function(){
+     /*var height = $(window).height()/10;
+     var width = ((($(window).width()/100)*75)/10);
+     if(height>width)
+     {
+        $("#outer").css("left",width*2);
+        $("#outer").css("top",height*2);
+        $("#outer").css("width",width*6);
+        $("#outer").css("height",width*6);
+     }
+     else
+     {
+        $("#outer").css("left",width*3);
+        $("#outer").css("top",height*2);
+        $("#outer").css("width",height*6);
+        $("#outer").css("height",height*6);
+     } */   
+    $("#right_container_journey").css("display","none");    
+    $("#right_container_product").css("display","none");    
+    $("#right_container_distrubutor").css("display","block");    
+});
+        
+var box = document.querySelector('.menu_moving_stick');
+var previos_selected_id = "distributor";
+    
+function stick_animate(obj)
+{
+    // Animate
+    if(previos_selected_id!= obj.id)
+    {
+        box.classList.toggle('move');
+        // Change Div
+        change_div(obj);
+    }
+    previos_selected_id = obj.id;
+}
+
+function change_div(obj)
+{
+    if(previos_selected_id!= obj.id)
+    {
+        if(obj.id=="product")
+        {
+            $("#right_container_journey").css("display","none");    
+            $("#right_container_product").css("display","block");    
+            $("#right_container_distrubutor").css("display","none");        
+        }
+        else if(obj.id=="distributor")
+        {
+            $("#right_container_journey").css("display","none");    
+            $("#right_container_product").css("display","none");    
+            $("#right_container_distrubutor").css("display","block");    
+        }
+        else if(obj.id=="journey")
+        {
+            document.getElementById("right_container_journey").innerHTML='<object type="text/html" class="right_sub_container" data="http://noreturnsblog.wordpress.com/" ></object>';
+            $("#right_container_journey").css("display","block");    
+            $("#right_container_product").css("display","none");    
+            $("#right_container_distrubutor").css("display","none");    
+        }
+    }
+    previos_selected_id = obj.id;    
+}
+</script>

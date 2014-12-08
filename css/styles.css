@@ -1,0 +1,138 @@
+body{
+    background:#e7edf2; 
+}
+
+.main_container{
+    position:absolute;
+    height:100%;
+    width:100%;
+    top:0px;
+    left:0px;
+}
+
+.right_container{
+    position:absolute;
+    height:100%;
+    width:75%;
+    left:10%;
+}
+
+.right_sub_container{
+    position:absolute;
+    height:100%;
+    width:100%;
+}
+
+.right_container_main_circle_1{
+    position:absolute;
+    width:475px;
+    height:475px;
+    left:30%;
+    top:12%;
+}
+
+.right_container_main_circle_2{
+    position:absolute;
+    width:39.50%;
+    height:62%;
+    left:9%;
+    top:-15%;
+}
+
+.right_moving_circle_1{
+    position:absolute;
+    height:100%;
+    width:100%;
+    border-radius: 50%;
+    -webkit-animation:spin_clock 70s linear infinite;
+    -moz-animation:spin_clock 70s linear infinite;
+    animation:spin_clock 70s linear infinite;
+}
+
+.right_moving_circle_2{
+    position:absolute;
+    height:100%;
+    width:100%;
+        border-radius: 50%;
+    -webkit-animation:anti-spin_clock 70s linear infinite;
+    -moz-animation:anti-spin_clock 70s linear infinite;
+    animation:anti-spin_clock 70s linear infinite;
+}
+
+@-moz-keyframes spin_clock { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin_clock { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin_clock { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+@-moz-keyframes anti-spin_clock { 100% { -moz-transform: rotate(-360deg); } }
+@-webkit-keyframes anti-spin_clock { 100% { -webkit-transform: rotate(-360deg); } }
+@keyframes anti-spin_clock { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }
+
+
+/* Buttons & Pos */
+
+.button {
+    position: absolute;
+    width: 25%;
+    height: 25%;
+    border: 5px solid rgba(0,0,0,0.05);
+    box-shadow: 0 0 0 10px #e7edf2;
+    border-radius: 50%;
+    background: none;
+    background-color: #0073ae;
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    font-size: 100%;
+    text-transform: uppercase;
+    cursor: pointer;
+       outline: none;
+
+    -webkit-backface-visibility: hidden;
+}
+
+
+.button:hover{
+    color: #000;
+}
+
+.pos_north{
+    position:absolute;
+    left:0%;
+    left:0%;
+}
+
+.pos_south{
+    left:38%;
+    top:73%;
+}
+
+.pos_east{
+    top:38%;
+}
+
+.pos_west{
+    top:38%;
+    left:75%;
+}
+
+.pos_all{
+    top:38%;
+    left:38%;
+}
+
+.wrapper{
+    position:absolute;
+    width:39.50%;
+    height:62%;
+    left:34%;
+    top:20%;
+}
+
+.images{
+    width:300px;
+    height:300px;
+    display:none;
+    position:absolute;
+    left:100px;
+    top:120px;
+}
